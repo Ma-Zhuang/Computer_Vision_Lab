@@ -1,0 +1,90 @@
+\documentclass[a4paper, oneside]{article}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{url}
+
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+
+\usepackage[margin=3cm]{geometry}
+
+\usepackage{etoolbox}
+\usepackage{cleveref}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\newcommand\st{\textsuperscript{st}\xspace}
+\newcommand\nd{\textsuperscript{nd}\xspace}
+\newcommand\rd{\textsuperscript{rd}\xspace}
+\newcommand\nth{\textsuperscript{th}\xspace} %\th is taken already
+
+\newtoggle{outputAnswers}
+
+% Toggle whether or not to include answers to homework questions.
+ \toggletrue{outputAnswers}
+%\togglefalse{outputAnswers}
+
+
+\newcommand{\assignment}[0]{assignment\xspace}
+\newcommand{\assignments}[0]{assignments\xspace}
+\newcommand{\Assignment}[0]{Assignment\xspace}
+\begin{document}
+	\title{Robot Vision \Assignment 1}
+	\date{\today}
+	
+	\maketitle
+	\begin{tabularx}{\textwidth}{lX}
+		Submission deadline: & 23:59 on the 31\st of January\\
+		Instructor: & Dr. Hyung Jin Chang\\
+		Teaching Assistant: & Nora Horanyi\\		
+		Contribution to overall module mark: & 0\%\\
+		Submission Method: & This \assignment must be submitted through Canvas.\\
+		\addlinespace[1cm]
+		Name: & your name\\
+		Username: & your username (abc123)\\		
+		Study program: &  MSc your program\\
+	\end{tabularx}
+	\section*{Part 1}
+	\begin{description}		
+		\item[Question 1.1 ] \emph{Why is the image from a pinhole camera inverted? }
+		\\your answer
+		\item[Question 1.2 ] \emph{A camera is configured so that an object at a distance of 1.4m from the pupil of the camera is in focus on the camera sensor at a distance of 3cm from the pupil of the camera. What must be the focal length of the lens using the thin lens approximation? What size would a 1.6m-tall in-focus human appear on the camera sensor? Show your working.}
+		\\your answer
+		\item[Question 1.3 ] \emph{Describe homogeneous coordinates and explain why they are useful for transformations between the world and camera coordinate systems, and for projections onto the camera image plane.}
+		\\your answer
+	    \item[Question 1.4 ] \emph{Explain what is a camera projection matrix, where and how it is used. Please describe the values of the camera projection matrix and how they are calculated.}
+	    \\your answer
+		\item[Question 1.5 ] \emph{Calibration of camera intrinsic and extrinsic properties often involves the use of calibration patterns which contain landmarks at known locations. List desirable properties of such calibration patterns and explain why these properties are important.}
+		\\your answer
+
+	\end{description}
+	
+	\section*{Part 2}
+	For this task, you will have to submit the following file:
+    \begin{itemize}
+    \item code \textbf{username\_assignment1.m}
+    \end{itemize}
+    After running your code we will have to see at least five different images. Is is adviced to use \textbf{imshow} with the \textbf{figure} command. ' figure; imshow() '
+
+	\section*{Part 3}
+	For this task, you will have to submit the following files:
+\begin{itemize}
+    \item calibration results \textbf{username\_assignment1\_1.txt} and \textbf{Calib\_results.m}
+    \item extrinsic parameters \textbf{username\_assignment1\_2.fig}
+    \item reprojection error \textbf{username\_assignment1\_3.fig}
+    \item camera intrinsic matrix  (\textbf{username\_assignment1\_4.mat})
+\end{itemize}
+
+    \begin{description}
+	\item[Task 3.3 answer] \emph{What is the reprojection error?} \\your answer
+	\end{description}
+	
+	
+	\begin{description}
+	\item[Task 3.4 ] \emph{Analyse the accuracy of the calibration.}\\your answer
+	\end{description}
+	
+\end{document}
