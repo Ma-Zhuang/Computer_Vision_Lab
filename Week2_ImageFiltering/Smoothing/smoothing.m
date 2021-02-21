@@ -4,13 +4,15 @@ n = input('请输入均值滤波器模板大小\n');
 
 
 %% 使用系统内置函数对图片进行平滑操作
+tic
 % 创建卷积核模板
 A = fspecial('average',n);
 % 进行卷积操作
 Y = imfilter(lena,A,'conv');
-
+toc
 
 %% 通过自己实现的方法实现平滑处理
+tic
 %计算需要在图像中增加的轮过大小
 padding_num = (n-1)/2;
 % 获取当前图片的尺寸
@@ -63,7 +65,7 @@ for i = 1:lena_size(3)
         end
     end
 end
-
+toc
 
 %% 显示原图与结果
 subplot(1,3,1);
