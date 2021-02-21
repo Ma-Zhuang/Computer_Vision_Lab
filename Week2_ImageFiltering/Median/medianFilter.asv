@@ -1,0 +1,32 @@
+function result = medianFilter(Img,Filter)
+
+img_size = size(Img);
+result = uint8(zeros(img_size(1),img_size(2),img_size(3)));
+filter_size = size(Filter);
+filter_center = (filter_size(1)+1)/2;
+padding_num = (filter_size(1)-1)/2;
+
+padding_img = zeros(img_size(1)+(2*padding_num),img_size(2)+(2*padding_num),img_size(3));
+
+for i = 1:img_size(3)
+    for j = 1:img_size(1)
+        for k = 1:img_size(2)
+            padding_img(j+padding_num,k+padding_num,i) = Img(j,k,i);
+        end
+    end
+end
+
+for i = 1:img_size(3)
+    for j = 1:img_size(1)
+        for k = 1:img_size(2)
+            for l = 0:(2*padding_num)
+                for m = 0:(2*padding_num)
+                    
+                end
+            end
+        end
+    end
+end
+
+end
+

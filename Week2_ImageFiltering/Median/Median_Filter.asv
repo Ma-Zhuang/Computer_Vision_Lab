@@ -1,0 +1,24 @@
+salt1 = imread('Test_img\salt_and_pepper.PNG');
+salt2 = imread('Test_img\salt_and_pepper1.PNG');
+impulse = imread('Test_img\Impulse.PNG');
+
+kernel_size = input("请输入卷积核大小\n");
+
+kernel = ones(kernel_size);
+
+result = medianKernel(salt1,kernel);
+
+Y = medfilt3(salt1,[kernel_size,kernel_size,kernel_size]);
+
+subplot(3,3,1);
+imshow(salt1);
+title('Original Image');
+hold on;
+
+subplot(3,3,2);
+imshow(result);
+title('Median')
+
+subplot(,3,3);
+imshow(Y);
+title('Median lib')
