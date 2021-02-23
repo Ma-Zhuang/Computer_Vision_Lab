@@ -1,0 +1,16 @@
+calc = imread('img\calculator2_buttons.jpg');
+calc_gary = rgb2gray(calc);
+se1=strel('disk',4);
+calc_gary_erode = imerode(calc_gary,se1);
+calc_c = calc_gary-calc_gary_erode;
+%imhist(calc_c);
+[count,x]=imhist(calc_c);
+stem(x,count);
+%imshow(calc_c);
+T = 141;
+[height,width] = size(calc_c);
+
+for i = 1:height
+    for j = width
+        
+        calc_c(i,j)
