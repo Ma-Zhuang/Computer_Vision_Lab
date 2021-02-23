@@ -1,0 +1,17 @@
+img = imread('img\text_dilatation.png');
+thresh_img = graythresh(img);
+img_bw = im2bw(img,thresh_img);
+kernel = [0,1,0;
+          1,1,1;
+          0,1,0];
+% se1=strel('disk',5);
+% A = imerode(img,se1);
+result_d = myErosion(img_bw,kernel);
+subplot(1,2,1)
+imshow(img);
+title("Original Image");
+hold on;
+
+subplot(1,2,2);
+imshow(result_d);
+title("Dilatetation Image")
