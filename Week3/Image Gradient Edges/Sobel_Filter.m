@@ -1,8 +1,8 @@
 tigger_gray = imread('Test_img\tigger.PNG');
 
-kernel_x = [-1,0,1;-1,0,1;-1,0,1];
+kernel_x = [-1,0,1;-2,0,2;-1,0,1];
 
-kernel_y = [1,1,1;0,0,0;-1,-1,-1];
+kernel_y = [1,2,1;0,0,0;-1,-2,-1];
 
 [result_x,result_y] = myFilter(tigger_gray,kernel_x,kernel_y);
 
