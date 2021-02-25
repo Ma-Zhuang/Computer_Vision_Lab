@@ -1,0 +1,29 @@
+% sigma = 3;
+% kernel_size = (6*sigma) + 1;
+% 
+% kernel_x = ones(kernel_size)*10;
+% kernel_y = ones(kernel_size)*10;
+% kernel_center = (kernel_size+1)/2;
+% totle = 0;
+% for i = 1:kernel_size
+%     for j = 1:kernel_size
+%         [kernel_x(i,j),kernel_y(i,j)] = gaussian_1d(i-kernel_center,j-kernel_center,sigma);
+%         totle = totle + kernel_x(i,j)+kernel_y(i,j);
+%     end
+% end
+% 
+% kernel_x = kernel_x/max(kernel_x(:));
+% kernel_y = kernel_y/max(kernel_y(:));
+% subplot(1,2,1);
+% imshow(kernel_x);
+% hold on;
+% 
+% subplot(1,2,2);
+% imshow(kernel_y);
+% 
+% disp(totle);
+
+lena = imread('Test_img\lena.jpg');
+lena_gary = rgb2gray(lena);
+
+result = lena
