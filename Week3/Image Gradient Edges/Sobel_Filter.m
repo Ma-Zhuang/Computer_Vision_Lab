@@ -6,8 +6,8 @@ kernel_y = [1,2,1;0,0,0;-1,-2,-1];
 
 [result_x,result_y] = myFilter(tigger_gray,kernel_x,kernel_y);
 
-result_x = result_x/max(result_x(:));
-result_y = result_y/max(result_y(:));
+% result_x = result_x/max(result_x(:));
+% result_y = result_y/max(result_y(:));
 
 result = sqrt(result_x.^2+result_y.^2);
 

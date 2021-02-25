@@ -1,4 +1,4 @@
-function [result_x, result_y]= der_Gaussian_filter(Img,sigma,der)
+function [result_x, result_y, result_ori]= der_Gaussian_filter(Img,sigma,der)
     [height,width] = size(Img);
     kernel_size = (6*sigma)+1;
     kernel_center = (kernel_size+1)/2;
@@ -6,6 +6,7 @@ function [result_x, result_y]= der_Gaussian_filter(Img,sigma,der)
     kernel_y = zeros(kernel_size);
     result_x = zeros(height,width);
     result_y = zeros(height,width);
+    result_ori = zeros(height,width);
     if der == 1
         for i = 1:kernel_size
             for j = 1: kernel_size
@@ -19,15 +20,13 @@ function [result_x, result_y]= der_Gaussian_filter(Img,sigma,der)
             end
         end
     end
-    
-    total_x = sum(sum(kernel_x));
-    total_y = sum(sum(kernel_y));
-    for i = 1:kernel_size
-        for j = 1:kernel_size
-            kernel_x(i,j) = kernel_x(i,j)/total_x;
-            kernel_y(i,j) = kernel_y(i,j)/total_y;
-        end
-    end
+%     disp(sum(kernel_x(:)));
+%     disp(sum(kernel_y(:)));
+%     kernel_x = kernel_x/sum(kernel_x(:));
+%     kernel_y = kernel_y/sum(kernel_y(:));
+%     disp("--------------------------------------------");
+% %     disp(kernel_x);
+% %     disp(kernel_y);
     
     padding_num = (kernel_size-1)/2;
     padding = zeros(height+(padding_num*2),width+(padding_num*2));
@@ -58,6 +57,7 @@ function [result_x, result_y]= der_Gaussian_filter(Img,sigma,der)
             end
             result_x(i,j) = tmp_result_x;
             result_y(i,j) = tmp_result_y;
+            result_ori(i,j) = (atan(tmp_result_y/tmp_result_x)*180)/pi;
         end
     end
 end
