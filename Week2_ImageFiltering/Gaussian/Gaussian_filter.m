@@ -1,4 +1,4 @@
-noise = imread('Test_img\Gaussian_noise.PNG');
+noise = imread('Test_img\lena.jpg');
 
 kernel = Gaussian_kernel(2);
 

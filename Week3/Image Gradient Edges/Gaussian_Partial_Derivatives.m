@@ -34,15 +34,16 @@ hold on;
 
 % figure;
 % imhist(ori);
-tmp = zeros(263,263);
-for i = 1:263
-    for j = 1:263
-        if ori(i,j) > 0.15
-            tmp(i,j) = 255;
-        end
-    end
-end
+edge_result = Hysteresis_Thresholding(ori,0.15,0.09);
 
 subplot(1,3,3);
-imshow(tmp);
+imshow(edge_result);
 hold on;
+
+
+% b=[1 2 3;4 5 6;7 8 9];
+% 
+% [row,cell]=find(b>=3);
+% disp(row(1));
+% disp(cell(1));
+% disp(size(row));
