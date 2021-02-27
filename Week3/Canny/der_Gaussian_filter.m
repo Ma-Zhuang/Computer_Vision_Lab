@@ -57,7 +57,7 @@ function [result_x, result_y, result_ori]= der_Gaussian_filter(Img,sigma,der)
             end
             result_x(i,j) = tmp_result_x;
             result_y(i,j) = tmp_result_y;
-            result_ori(i,j) = (atan(tmp_result_y/tmp_result_x)*180)/pi;
+            result_ori(i,j) = atan(tmp_result_y/tmp_result_x);
         end
     end
 end

@@ -218,24 +218,16 @@ function result = Non_maximum_suppression(Img,Direction)
 %                 g1
 %                 g2 C g4
 %                      g3
-                if theta>0
+    if theta>0
                     gradient1 = Img(i - 1,j - 1);
                     gradient3 = Img(i + 1,j + 1);
                 else
-%                       g3
-%                  g2 C g4
-%                  g1
+%                       g2 g1
+%                       C
+%                    g3 g4
                     gradient1 = Img(i - 1,j + 1);
                     gradient3 = Img(i + 1,j - 1);
                 end
-            end
-            temp1 = abs(theta) * gradient1 + (1-abs(theta)) * gradient2;
-            temp2 = abs(theta) * gradient3 + (1-abs(theta)) * gradient4;
-            
-            if img >= temp1 && img>=temp2
-                result(i,j) = img;
-            else
-                result(i,j) = 0;
             end
         end
     end     
