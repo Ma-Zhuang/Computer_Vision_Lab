@@ -1,5 +1,5 @@
-img_d = imread('img\text_dilatation.png');
-img_e = imread('img\text_Erosion.png');
+img_d = imread('img\calculator2_buttons.jpg');
+img_e = imread('img\calculator2_buttons.jpg');
 thresh_img_d = graythresh(img_d);
 thresh_img_e = graythresh(img_e);
 img_bw_d = im2bw(img_d,thresh_img_d);
