@@ -1,5 +1,6 @@
-%% original image,gray image,sigma, number of harris,K
-function result = myHarris(img,img_gary,sigma,Harris_Number,K)
+%% original image, sigma, number of harris,K
+function result = myHarris(img,sigma,Harris_Number,K)
+    img_gary = rgb2gray(img);
     [height_img,width_img] = size(img_gary);
     [img_x, img_y, img_ori]= der_Gaussian_filter(img_gary,1);
     gaussian_kernel = Gaussian_kernel(sigma);
