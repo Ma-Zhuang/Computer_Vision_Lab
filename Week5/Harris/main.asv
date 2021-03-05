@@ -1,0 +1,40 @@
+img_1 = imread('Test_img\1.PNG');
+img_1_gary = rgb2gray(img_1);
+[img_1_x, img_1_y, img_1_ori]= der_Gaussian_filter(img_1_gary,1);
+gaussian_kernel = Gaussian_kernel(1);
+
+I_x2 = img_1_x.^2;
+I_y2 = img_1_y.^2;
+I_xy = img_1_x.*img_1_y;
+
+I_x2 = myFilter(I_x2,gaussian_kernel);
+I_y2 = myFilter(I_y2,gaussian_kernel);
+I_xy = myFilter(I_xy,gaussian_kernel);
+
+
+
+[height_img_1,width_img_1] = size(img_1_gary);
+
+R = zeros(height_img_1,width_img_1);
+
+for i = 1:height_img_1
+    for j = 1:width_img_1
+        M = [I_x2(i,j),I_xy(i,j);I_xy(i,j),I_y2(i,j)];
+        tmpR = det(M)-0.04*trace(M)^2;
+        if tmpR >= 150
+            R(i,j) = tmpR;
+        end
+    end
+end
+
+% for i = 2:height_img_1-1
+%     for j = 2:width_img_1-1 
+%         % 进行非极大抑制，窗口大小3*3 
+%         if  R(i,j) > R(i-1,j-1) && R(i,j) > R(i-1,j) && R(i,j) > R(i-1,j+1) && R(i,j) > R(i,j-1) && R(i,j) > R(i,j+1) && R(i,j) > R(i+1,j-1) && R(i,j) > R(i+1,j) && R(i,j) > R(i+1,j+1) 
+%             R(i,j) = 1;  
+%         else
+%             R(i,j) = 0;
+%         end
+%     end
+% end
+imshow(R);
