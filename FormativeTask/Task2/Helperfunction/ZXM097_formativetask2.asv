@@ -19,7 +19,7 @@
 % 
 % %% Question 1.3
 % data1 = load('sfmGlobe');
-%% https://ww2.mathworks.cn/help/vision/ug/structure-from-motion-from-multiple-views.html
+%% 
 % Use |imageDatastore| to get a list of all image file names in a
 % directory.
 imageDir = fullfile(toolboxdir('vision'), 'visiondata', ...
