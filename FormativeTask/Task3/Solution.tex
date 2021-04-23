@@ -1,0 +1,54 @@
+\documentclass[a4paper, oneside]{article}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{url}
+
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+
+\usepackage[margin=3cm]{geometry}
+
+\usepackage{etoolbox}
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+
+\newcommand\st{\textsuperscript{st}\xspace}
+\newcommand\nd{\textsuperscript{nd}\xspace}
+\newcommand\rd{\textsuperscript{rd}\xspace}
+\newcommand\nth{\textsuperscript{th}\xspace} %\th is taken already
+
+\newtoggle{outputAnswers}
+
+% Toggle whether or not to include answers to homework questions.
+ \toggletrue{outputAnswers}
+%\togglefalse{outputAnswers}
+
+
+\newcommand{\assignment}[0]{assignment\xspace}
+\newcommand{\assignments}[0]{assignments\xspace}
+\newcommand{\Assignment}[0]{Assignment\xspace}
+\begin{document}
+	\title{Computer Vision \& Imaging/ Robot Vision - Formative task}
+	\date{\today}
+	
+	\maketitle
+    \begin{center}
+        \Large
+        Answer Sheet
+    \end{center}
+    \begin{description}
+    	\item[Question 1] \emph{Load the League of Legends Champions stats data from \texttt{data.csv}. Normalise the data and apply principal component analysis to calculate the principal component coefficients. Visualise the first and second principal components with a loading plot, explain the meaning of a loading plot, and describe what kind of information you can obtain from the loading plot.}
+    	\item[Answer]
+    	\item[Question 2] \emph{Alternatively, use a bar chart to illustrate the principal component coefficients, and compare it with the loading plot: what's the pros and cons of a loading plot and a bar chart?}
+    	\item[Answer]
+    	\item[Question 3] \emph{Calculate total variance of all principal components, and visualise the accumulative variance with each principal component. Describe how much does the first two principal components explained from the data.}
+    	\item[Answer]
+    	\item[Question 4] \emph{Perform dimensionality reduction to the data, and visualise the data on a score plot using the first two principal components. Use different color to distinguish champions with different type. Judging by the champions' types, how well does PCA explain the given dataset?}
+    	\item[Answer]
+	\end{description}
+\end{document}
