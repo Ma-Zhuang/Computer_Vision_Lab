@@ -11,7 +11,7 @@ originTrainImds = imageDatastore(trainDataFolder, ...
 %%从原始训练集中提取需要的类别，存储为训练集 
 [trainDatasetTotal,~] = splitEachLabel(originTrainImds,5000,'Include',categoriesLable);
 %%设置训练数据的个数
-numTrainFiles = int32((5000/3)*2);
+numTrainFiles = int32((5000/9)*8);
 %%将数据集分为训练集和验证集，其中训练集占总数据的2/3
 [trainDataset,trainDatasetValidation] = splitEachLabel(trainDatasetTotal,numTrainFiles,'randomize');
 %%测试集路径
