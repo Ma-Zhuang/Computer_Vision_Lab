@@ -28,7 +28,7 @@ imshow(lena_nonMax);
 title("Non Maximum Suppression");
 hold on;
 
-edge_result = Hysteresis_Thresholding(lena_nonMax,0.27,0.09);
+edge_result = Hysteresis_Thresholding(lena_nonMax,0.3,0.1);
 subplot(2,3,5);
 imshow(edge_result);
 title("Edge detection");
